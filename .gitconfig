@@ -1,0 +1,50 @@
+# Use CRLF automatically from input. Only use on repositories from Windows.
+#git config core.autocrlf input
+
+[user]
+	email = kwhalen2@kent.edu
+	name = Kevin Whalen
+
+[push]
+	default = simple
+
+[core]
+	editor = vim
+
+[credential]
+	helper = cache --timeout=3600
+
+[color]
+	ui = auto
+# The accepted values are two of
+#   normal, black, red, green, yellow, blue, magenta, cyan, and white;
+# and optionally one of
+#   bold, dim, ul, blink, and reverse.
+# If two colors are given the first is the foreground and the second is the
+# background.
+[color "branch"]
+	current = green
+	local = normal
+	remote = red
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green
+	changed = red
+	untracked = cyan
+
+[diff]
+	#tool = vimdiff
+	tool = meld
+
+[log]
+	follow = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
