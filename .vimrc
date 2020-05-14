@@ -64,7 +64,7 @@ set bg=light
 "}
 
 
-""" """
+""" ===
 " Pathogen plugin bundler
 execute pathogen#infect()
 
@@ -84,7 +84,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Initialize plugin system
 call plug#end()
-""" """
+""" ---
 
 
 " Use <tab> for completion trigger completion and navigate to next complete item
