@@ -1,2 +1,3 @@
 # dotfiles
-Finally gave in to the pressure; just another configuration file repository.
+
+Finally gave into the pressure; yet another configuration file repository.
