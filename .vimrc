@@ -68,18 +68,25 @@ set bg=light
 " Pathogen plugin bundler
 execute pathogen#infect()
 
-" Override default maximum lines for gutter edit signs (500).
-let g:gitgutter_max_signs = 2000
+" https://github.com/kchmck/vim-coffee-script#coffeewatch-live-preview-compiling
+" create alias command to trigger coffee watching window
+command W CoffeeWatch
+":setl scrollbind
+" https://github.com/kchmck/vim-coffee-script#coffee_watch_vert
+"let coffee_watch_vert = 1
+""" ---
 
-"""
-
+""" ===
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
 " https://microsoft.github.io/language-server-protocol/implementors/tools/
+" https://github.com/neoclide/coc.nvim/wiki/Language-servers
 " Conquer of Completion
 " Configuration file: ~/.vim/coc-settings.json
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " pip3 install --user python-language-server
 
 " Initialize plugin system
@@ -233,13 +240,23 @@ augroup END
 "endfunction
 
 
+
+
+source ~/.vim/coc.vimrc
+source ~/.vim/gitgutter.vimrc
+
+
 " Current vimfile stuff.
-"   ~/.vim/coc-settings.json
+"   ~/.vim:
+"     coc-settings.json
 "   ~/.vim/autoload:
-"   pathogen.vim  plug.vim  plug.vim.old
+"     pathogen.vim  plug.vim  plug.vim.old
 "   ~/.vim/bundle:
-"   git-time-lapse  vim-gitgutter
+"     git-time-lapse  vim-gitgutter
+"   ~/.vim/language:
+"     coffeescript-lsp-core
 "   ~/.vim/plugged:
-"   coc.nvim
+"     coc.nvim
 "   ~/.vim/syntax:
-"   pyopencl.vim
+"     pyopencl.vim
+
