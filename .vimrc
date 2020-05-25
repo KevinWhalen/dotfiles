@@ -125,14 +125,23 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " http://vim.wikia.com/wiki/VimTip991
 
 
-" split buffers
-" :sp filename       Open filename in horizontal split
-" :vsp filename      Open filename in vertical split
-" Ctrl-w [h|l|j|k|←|→|↑  Shift focus to different split
-" Ctrl-w n+          Increase size of current split by n lines
-" Ctrl-w n-          Decrease size of current split by n lines
-" Ctrl-w _           Maximize the current split
-" Ctrl-w =           Equalized splits
+" split buffers (windows)
+" :sp filename            Open filename in horizontal split
+" :vsp filename           Open filename in vertical split
+" :sb#                    Put a buffer in a split window (# is its number)
+" :vert sb#               Put buffer # in a vertical split window
+" Ctrl+w [h|l|j|k|←|→|↑]  Shift focus to different split
+" Ctrl+w n+               Increase size of current split by n lines
+" Ctrl+w n-               Decrease size of current split by n lines
+" Ctrl+w _                Maximize height of the current split
+" Ctrl+w |                Maximize width of the current split
+" Ctrl+w =                Equalized splits
+" Ctrl+W R                Swap split positions
+" Ctrl+W T                Pull current window into a new buffer tabview
+" Ctrl+W o                Close all but current window
+" Top to bottom, left to right splitting:
+set splitbelow
+set splitright
 
 
 " clearspeed filetype syntax highlighting
