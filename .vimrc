@@ -49,6 +49,15 @@ set bg=light
 "set cursorcolumn
 "set cursorline
 
+" vimdiff
+if &diff
+    " bold orange text color and grey background
+    highlight DiffText cterm=bold ctermfg=1 ctermbg=12 gui=none guifg=maroon guibg=blue
+    " squashes down the before and after context (but not yet to a true 0;
+    " might only be before or after)
+    "set diffopt=filler,context:0
+endif
+
 
 " Status Line {
     set laststatus=2                             " always show statusbar
