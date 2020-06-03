@@ -51,10 +51,12 @@ set bg=light
 
 " vimdiff
 if &diff
+    " vimdoc.sourceforge.net/htmldoc/syntax.html#hl-DiffText
     " bold orange text color and grey background
     highlight DiffText cterm=bold ctermfg=1 ctermbg=12 gui=none guifg=maroon guibg=blue
-    " squashes down the before and after context (but not yet to a true 0;
-    " might only be before or after)
+    " vimdoc.sourceforge.net/htmldoc/fold.html#fold-diff
+    " Squashes down the before and after context (but not yet to a true 0;
+    " might only be before or after).
     "set diffopt=filler,context:0
 endif
 
