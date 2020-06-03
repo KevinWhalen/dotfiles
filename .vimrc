@@ -123,6 +123,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " folding `:help fold-commands`
 " http://vim.wikia.com/wiki/Folding
+" http://vim.wikia.com/wiki/VimTip991
 " `zf` create fold
 " `zo` open fold (expand)
 " `zc` close fold up
@@ -133,7 +134,20 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 "set foldmethod=manual
 "set foldmethod=marker
 "set foldmethod=syntax
-" http://vim.wikia.com/wiki/VimTip991
+
+" https://stackoverflow.com/a/33281531/3003133
+" https://en.wikipedia.org/wiki/Signature_mark
+function! EndLineCountFoldText()
+    let nblines = v:foldend - v:foldstart + 1
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let line = getline(v:foldstart)
+    let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
+    "let foldLevelStr = repeat(">", v:foldlevel)
+    let txt = '❧ ' . comment . expansionString . nblines
+    return txt
+endfunction
+set foldtext=EndLineCountFoldText()
 
 
 " split buffers (windows)
