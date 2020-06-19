@@ -27,6 +27,8 @@ set ai
 "set si
 " cursor buffer at the top and bottom
 set scrolloff=0
+" keeps a single space, but not double after punctuation.
+set nojoinspaces
 " unmodified pasting
 set pastetoggle=<F2>
 " create command to clear a search pattern
