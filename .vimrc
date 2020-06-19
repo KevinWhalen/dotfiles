@@ -90,37 +90,18 @@ command W CoffeeWatch
 """ ---
 
 """ ===
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
-
-" https://microsoft.github.io/language-server-protocol/implementors/tools/
-" https://github.com/neoclide/coc.nvim/wiki/Language-servers
-" Conquer of Completion
-" Configuration file: ~/.vim/coc-settings.json
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" pip3 install --user python-language-server
-
-" Initialize plugin system
-call plug#end()
+" Using Plug automatically executes filetype plugin indent on and syntax enable.
+" Can be reverted after the end call. e.g. filetype indent off, syntax off, etc.
+call plug#begin('~/.vim/plugged') " specify a directory for plugins.
+    " https://microsoft.github.io/language-server-protocol/implementors/tools/
+    " Conquer of Completion
+    " Configuration file: ~/.vim/coc-settings.json
+    "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    "Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " pip3 install --user python-language-server
+call plug#end() " initialize plugin system.
 """ ---
-
-
-" Use <tab> for completion trigger completion and navigate to next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 " folding `:help fold-commands`
@@ -286,9 +267,9 @@ source ~/.vim/gitgutter.vimrc
 "   ~/.vim:
 "     coc-settings.json
 "   ~/.vim/autoload:
-"     pathogen.vim  plug.vim  plug.vim.old
+"     pathogen.vim  plug.vim
 "   ~/.vim/bundle:
-"     git-time-lapse  vim-gitgutter
+"     vim-gitgutter
 "   ~/.vim/language:
 "     coffeescript-lsp-core
 "   ~/.vim/plugged:
