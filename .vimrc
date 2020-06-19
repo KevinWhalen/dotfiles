@@ -230,7 +230,9 @@ augroup vimrc_autocmds_mmd
     autocmd BufRead,BufNewFile *.mmd set expandtab
 augroup END
 
+
 "autocmd BufEnter * :syntax sync fromstart
+
 
 " Format XML
 ":%!xmllint --format -
@@ -257,8 +259,6 @@ augroup END
 "endfunction
 
 
-
-
 source ~/.vim/coc.vimrc
 source ~/.vim/gitgutter.vimrc
 
@@ -276,4 +276,7 @@ source ~/.vim/gitgutter.vimrc
 "     coc.nvim
 "   ~/.vim/syntax:
 "     pyopencl.vim
+
+
+" vim: tabstop=4 shiftwidth=4 expandtab
 
