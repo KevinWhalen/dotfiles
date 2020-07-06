@@ -1,0 +1,127 @@
+# Commonly worked with tools.
+#
+# top-level table: grouping
+#   list name: installation method (package manager); except "direct" means that and is not a name
+#     "name": tool's name
+#     "alias": related/verbose name or literal shell alias
+#     "package": name of package if it does not match the tool's name
+#     "external-repo": a non-standard repository location that must be configured
+
+
+[common] # likely already exists, though may not in all (e.g. minimal systems).
+[[dnf]]
+name = "bash"
+[[dnf]]
+name = "less"
+[[dnf]]
+name = "grep"
+[[dnf]]
+name = "awk"
+alias = "gawk"
+[[dnf]]
+name = "less"
+[[dnf]]
+name = "which"
+[[dnf]]
+name = "tar"
+[[dnf]]
+name = "wc"
+[[dnf]]
+name = "df"
+[[dnf]]
+name = "du"
+[[dnf]]
+name = "cat"
+[[dnf]]
+name = "systemctl"
+[[dnf]]
+name = "firewall-cmd"
+[[dnf]]
+name = "ip"
+
+[specific] # unlikely to come with system.
+	[[dnf]]
+	name = "colordiff"
+	[[dnf]]
+	name = "wdiff"
+	[[dnf]]
+	name = "vim"
+	[[dnf]]
+	name = "xz"
+	[[dnf]]
+	name = "git"
+	[[dnf]]
+	name = "docker"
+	external-repo = true
+	[[direct]]
+	name = "docker-compose"
+	[[dnf]]
+	name = "locate"
+	package = "mlocate"
+	[[dnf]]
+	name = updatedb
+	package = "mlocate"
+
+	[specific.json]
+		[[dnf]]
+		name = "jq"
+	[specific.xml]
+		[[dnf]]
+		name = "xmllint"
+		package = "libxml2"
+	[specific.javascript]
+		[[npm]]
+		name = "yarn"
+		[[yarn]]
+		name = "got"
+	[specific.python]
+		[[python3]]
+		name = "pip3"
+		alias = "pip"
+		package = "ensurepip"
+		[[pip3]]
+		name = "poetry"
+		[[poetry]]
+		name = "bpython"
+		[[poetry]]
+		name = "jedi"
+		[[poetry]]
+		name = "python-language-server"
+		#python-jsonrpc-server
+		#ujson
+
+[language] # for completeness
+[[dnf]]
+name = "python3"
+alias = "python"
+[[direct]]
+name = "rustup"
+[[rustup]]
+name = "rust"
+[[dnf]]
+name = "node"
+alias = "javascript"
+package = "nodejs"
+[[yarn]]
+name = "coffee"
+alias = "coffeescript"
+[[dnf]]
+name = "perl"
+[[dnf]]
+name = m4
+
+[build-tools]
+[[yarn]]
+name = "cake"
+package = "coffeescript"
+[[dnf]]
+name = make
+
+
+
+
+# Went back and forth for a minute about markdown vs TOML. Decided that even
+# though this is likely will not ever be machine read, the little bit rigidity
+# forced by TOML compared to markdown may force a clean structure for future
+# updates. It would be simple to convert to markdown if a documentation style
+# use becomes desireable in the future.
