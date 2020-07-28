@@ -1,5 +1,8 @@
 # win10, git-bash
 
+Locale=en_US
+Charset=UTF-8
+
 CursorType=block
 Font=Consolas
 FontHeight=10
