@@ -59,7 +59,7 @@ name = "ip"
 	name = "locate"
 	package = "mlocate"
 	[[dnf]]
-	name = updatedb
+	name = "updatedb"
 	package = "mlocate"
 
 	[specific.json]
@@ -108,14 +108,14 @@ alias = "coffeescript"
 [[dnf]]
 name = "perl"
 [[dnf]]
-name = m4
+name = "m4"
 
 [build-tools]
 [[yarn]]
 name = "cake"
 package = "coffeescript"
 [[dnf]]
-name = make
+name = "make"
 
 
 
