@@ -123,6 +123,6 @@ name = "make"
 # Went back and forth for a minute about markdown vs TOML. Decided that even
 # though this likely will not ever be machine read, the little bit of rigidity
 # from TOML may force a cleaner structure for future updates. Besides
-# maintenance another format was desired in the future, it would be simple to
-# generate from such a small TOML structure.
+# maintenance, if another format was desired in the future, it would likely be
+# simple to generate it from such a small TOML structure.
 
