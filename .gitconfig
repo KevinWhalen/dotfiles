@@ -35,6 +35,12 @@
 	added = green
 	changed = red
 	untracked = cyan
+[color.blame]
+	highlightRecent = blue,12 month ago,white,1 month ago,red
+
+[blame]
+	coloring = highlightRecent
+	blankboundary = true
 
 [diff]
 	#tool = vimdiff
