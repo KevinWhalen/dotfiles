@@ -33,6 +33,12 @@ set nojoinspaces
 set pastetoggle=<F2>
 " create command to clear a search pattern
 command C let @/=""
+" always forward and backward search (never reversed)
+nmap n /<CR>
+nmap N ?<CR>
+" * (asterisk) default is forward and # (hash, pound) is backward.
+" I never use asterisk search, but prefer forward search.
+nmap # *
 
 " soft wrap
 set wrap linebreak textwidth=0
