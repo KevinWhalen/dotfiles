@@ -14,6 +14,9 @@ alias calendar='calcurse'
 alias generate-pass="openssl rand -base64 48 | sed -e 's/[^A-Za-z0-9]//g'"
 alias git-log-search='git log -i --perl-regexp --grep'
 alias git-color='git -c color.status=always -c color.ui=always'
+# TODO: git-skip and git-unskip that use a .gitskip configuration.
+alias git-skip='git update-index --skip-worktree'
+alias git-unskip='git update-index --no-skip-worktree'
 alias show-ports='sudo netstat -tulpn | grep "LISTEN"'
 
 function files_with()
