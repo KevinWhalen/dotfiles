@@ -36,3 +36,5 @@ CursorColour=133,153,0
 BellType=0
 CtrlShiftShortcuts=yes
 CopyOnSelect=no
+Transparency=10
+OpaqueWhenFocused=yes
