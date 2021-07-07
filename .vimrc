@@ -98,12 +98,20 @@ command W CoffeeWatch
 """ ===
 " Using Plug automatically executes filetype plugin indent on and syntax enable.
 " Can be reverted after the end call. e.g. filetype indent off, syntax off, etc.
+" Upgrade Plug itself.
+"   PlugUpgrade
+" Install defined plugins.
+"   PlugInstall
+" Update already installed plugins.
+"   PlugUpdate
+" Install CoC extensions.
+"   CocInstall ... e.g.: coc-json coc-tsserver
+" Update CoC extensions.
+"   CocUpdate
 call plug#begin('~/.vim/plugged') " specify a directory for plugins.
     " https://microsoft.github.io/language-server-protocol/implementors/tools/
     " Conquer of Completion
     " Configuration file: ~/.vim/coc-settings.json
-    "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-    "Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " pip3 install --user python-language-server
 call plug#end() " initialize plugin system.
